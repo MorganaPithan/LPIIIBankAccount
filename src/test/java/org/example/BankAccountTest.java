@@ -27,6 +27,7 @@ class BankAccountTest {
     }
     @Test
     void testWithdrawInLimit() throws ExceedingLimitException, InsufficientBalanceException {
+        //Balance= 200 Limit= 110 Withdraw= 100
         BankAccount account = new BankAccount();
         account.setBalance(200);
         account.setLimit(110);
@@ -36,6 +37,7 @@ class BankAccountTest {
 
     @Test
     void testWithdrawExceedLimit() {
+        //Balance= 200 Limit= 50 Withdraw= 55 Exception= ExceedLimit
         BankAccount account = new BankAccount();
         account.setBalance(200);
         account.setLimit(50);
@@ -45,6 +47,7 @@ class BankAccountTest {
     }
     @Test
     void testWithdrawInsufficientBalance() {
+        //Balance= 200 Limit= 500 Withdraw= 255 Exception= InsufficientBalance
         BankAccount account = new BankAccount();
         account.setBalance(200);
         account.setLimit(500);
